@@ -1,7 +1,11 @@
 {
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  },
   "name": "node-practice",
-  "version": "1.0.0",
   "description": "",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,14 +14,10 @@
     "type": "git",
     "url": "git+https://github.com/SamBeak/node-practice.git"
   },
-  "author": "sam beak",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/SamBeak/node-practice/issues"
   },
-  "homepage": "https://github.com/SamBeak/node-practice#readme",
-  "dependencies": {
-    "express": "^4.18.2",
-    "nodemon": "^2.0.22"
-  }
+  "homepage": "https://github.com/SamBeak/node-practice#readme"
 }
