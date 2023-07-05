@@ -50,6 +50,15 @@ app.get('/note/:noteId', (req, res) => { // :noteId는 params(변수)이다. :(�
     res.send(item); // 찾은 것을 보낸다.
 });
 
+// query parameter
+app.get('/note', (req, res) => { // ?(물음표)는 쿼리 파라미터의 표기법이다. ? 뒤에 원하는 데이터의 형식들을 표기한다. => http://localhost:3000/note?name=1&note=2 일 경우 query는 name=1&note=2이다.
+    console.log(req.query); // reqest한 것의 query(변수)를 받아온다.
+    const { id, name, note } = req.query; // reqest한 것의 query(변수)의 id, name, note를 받아온다.
+    if(!id) res.send([]); // id가 없으면 [] 빈값을 보낸다.
+    const item = data.filter((item) => item.id == id); // data의 id와 reqest한 것의 query(변수)의 id가 같은 것을 찾는다.
+    res.send(item);
+});
+
 // update
 app.put('/user', function (req, res) {
 res.send('Got a PUT request at /user');
