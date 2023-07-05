@@ -43,6 +43,13 @@ app.get('/notes', function (req, res) {
     res.send(data);
 });
 
+// path parameter
+app.get('/note/:noteId', (req, res) => { // :noteId는 params(변수)이다. :(세미콜론)은 패스 파라미터 표기법이다. note의 noteId를 받아온다. => http://localhost:3000/note/1 일 경우 noteId는 1이다.
+    console.log(req.params); // reqest한 것의 params(변수)를 받아온다.
+    const item = data.filter(item => item.id === req.params.noteId); // data의 id와 reqest한 것의 params(변수)의 id가 같은 것을 찾는다.
+    res.send(item); // 찾은 것을 보낸다.
+});
+
 // update
 app.put('/user', function (req, res) {
 res.send('Got a PUT request at /user');
