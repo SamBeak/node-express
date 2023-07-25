@@ -6,6 +6,7 @@ const pool = mysql.createPool({
     user: "admin",
     password: "adminadmin",
     port: 3306,
+    database: "db_test",
   });
 
 //  pool.query(`CREATE DATABASE db_test`, function (err, results, fields) {
