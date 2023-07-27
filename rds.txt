@@ -1,0 +1,26 @@
+RDS 설치과정 (ec2 연결 없이 public하게 rds를 운용할 때)
+
+1. 지역확인 (도쿄 설정)
+2. vpc 생성
+3. RDS 내 subnet group 설정
+4. DB 생성
+5. RDS 인바운드 룰 설정
+6. pool 작성의 참고는 npm사이트의 mysql2를 조회해 찾으면되고 host에 해당하는 엔드포인트는 aws 해당 db 상세정보에서 볼 수 있다.
+
+
+
+vpc생성 과정
+옵션 - vpc등, 자동생성, 이름 입력
+
+RDS 내 subnet group 설정 과정
+설정 - 이름(ex. db_subnet-public), 설명(동일), VPC(2번에 생성한 VPC), 가용영역 a,c 선택 추가, 서브넷은 10.0.0.0과 10.0.16.0을 추가
+
+DB 생성 과정
+설정 - 
+표준, MySQL(not Aurora), 프리티어, db인스턴스식별자, 
+마스터사용자, 마스터암호, 오토스케일링, ec2연결(퍼블릭사용시 미연결), 
+virtual private cloud(2에서 생성한 vpc 설정), db subnet group(3번에서 생성한 서브넷 그룹), 
+pulbic access(yes), 추가구성(초기 데이터베이스이름)
+
+RDS 인바운드 룰 설정 과정
+설정 - 해당 db 상세 정보에 들어가 vpc security group(보안그룹) 링크 클릭 -> 인바운드룰 규칙 편집 -> ADD rule -> 올트래픽,Anywhere-IpV4 0.0000 -> Save rules
