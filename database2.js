@@ -1,8 +1,7 @@
 import mysql from "mysql2";
 
 // Create the connection pool. The pool-specific settings are the defaults
-const pool = mysql
-  .createPool({
+const pool = mysql.createPool({
     host: "database-1.cjodkemt1oor.ap-northeast-1.rds.amazonaws.com",
     user: "admin",
     password: "adminadmin",

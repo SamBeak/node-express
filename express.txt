@@ -2,6 +2,8 @@ express의 공식 홈페이지에 들어가 Getting Start의 Hello world를 들�
 참조할 수 있는 코드가 있다.
 익스프레스를 통해 연결하는 예제 코드다.
 
+Promise Async 이해하기
+
 
 import express from "express";
 import {
